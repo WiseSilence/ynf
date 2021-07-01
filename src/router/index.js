@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-const Home = () => import('../views/01home/Home')
-const Category = () => import('../views/02category/Category')
-const Cart = () => import('../views/03cart/Cart')
-const Profile = () => import('../views/04profile/Profile')
+// const Home = () => import('../views/01home/Home')
+const Home = () => import('views/01home/Home')  // 已在vue.config.js中进行了别名配置
+const Category = () => import('views/02category/Category')
+const Cart = () => import('views/03cart/Cart')
+const Profile = () => import('views/04profile/Profile')
 // const Detail = () => import('views/detail/Detail')
 
 // 1.安装VueRouter

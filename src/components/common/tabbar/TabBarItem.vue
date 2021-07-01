@@ -25,7 +25,7 @@
     },
     methods: {
 			itemClick() {
-        // console.log('itemClick');
+        // console.log('itemClick');  //用于测试点击事件是否发生，若发生，网页前端路由没有呈现，是因为没有使用<router-view></router-view>
         this.$router.replace(this.link)
       }
     }

@@ -24,8 +24,9 @@
 </template>
 
   <script>
-    import TabBar from '../../../components/common/tabbar/TabBar'
-    import TabBarItem from '../../../components/common/tabbar/TabBarItem'
+    // import TabBar from '../../../components/common/tabbar/TabBar'
+    import TabBar from 'components/common/tabbar/TabBar'  // 已在vue.config.js中进行了别名配置
+    import TabBarItem from 'components/common/tabbar/TabBarItem'
 
     export default {
       name: "MainTabBar",
