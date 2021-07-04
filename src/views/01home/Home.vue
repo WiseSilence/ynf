@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
+
     <Swiper>
       <swiper-item v-for="item in results">
         <a :href="item.url">{{item.username}}
@@ -8,12 +9,14 @@
         </a>
       </swiper-item>
     </Swiper>
+
   </div>
 </template>
 
 <script>
   import NavBar from 'components/common/navbar/NavBar';
   import {getHomeUserJson} from "network/home";  // 面向home.js发送网络请求
+
   // import Swiper from 'components/common/swiper/Swiper'  // 轮播图
   // import SwiperItem from 'components/common/swiper/SwiperItem'  // 轮播图
   import {Swiper, SwiperItem} from 'components/common/swiper'
@@ -22,9 +25,12 @@
     name: "Home",
     components: {
       NavBar,
+
       Swiper,
       SwiperItem
+
     },
+
     data() {
       return {
         // results: null
@@ -33,6 +39,7 @@
         // content: []
       }
     },
+
     created() {
       console.log('创建Home');
       // 1.请求多个数据
