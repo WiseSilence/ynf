@@ -36,8 +36,4 @@
     flex: 1;
     /*background-color: blue;*/
   }
-
-  /*.nav-right {*/
-  /*  width: 60px;*/
-  /*}*/
 </style>
