@@ -1,15 +1,19 @@
 <template>
-  <swiper ref="swiper" v-if="banners.length">
-    <swiper-item v-for="(item, index) in banners" :key="index">
-      <a :href="item.link">
-        <img :src="item.image" alt="">
+  <Swiper>
+    <swiper-item v-for="item in results">
+      <a :href="item.url">
+<!--        <img :src="item.email" alt="" >-->
+        <div>{{item.title}}</div>
       </a>
     </swiper-item>
-  </swiper>
+  </Swiper>
 </template>
 
 <script>
-  import {Swiper, SwiperItem} from 'common/swiper'
+  import {Swiper, SwiperItem} from 'components/common/swiper'
+  // import Swiper from 'components/common/swiper/Swiper'  // 轮播图
+  // import SwiperItem from 'components/common/swiper/SwiperItem'  // 轮播图
+  // import {Swiper, SwiperItem} from 'components/common/swiper'
 
 	export default {
 		name: "HomeSwiper",
@@ -18,9 +22,11 @@
       SwiperItem
     },
     props: {
-		  banners: {
+      results: {
 		    type: Array,
-        default: []
+        default() {
+		      return []
+        }
       }
     },
     methods: {

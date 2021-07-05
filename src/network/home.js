@@ -1,10 +1,10 @@
 // import axios from './axios'
 import {request} from "./request";
 
-export function getHomeUserJson() {
+export function getHomeBlog() {
   return request({
-    // url: '/blog/?format=json'
-    url: '/users.json'
+    url: '/blog/?format=json'
+    // url: '/users.json'
   })
 }
 
