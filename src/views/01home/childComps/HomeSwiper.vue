@@ -1,8 +1,8 @@
 <template>
   <Swiper>
-    <swiper-item v-for="item in results">
+    <swiper-item v-for="item in swipers">
       <a :href="item.url">
-<!--        <img :src="item.email" alt="" >-->
+<!--        <img :src="item.content" alt="" >-->
         <div>{{item.title}}</div>
       </a>
     </swiper-item>
@@ -22,7 +22,7 @@
       SwiperItem
     },
     props: {
-      results: {
+      swipers: {
 		    type: Array,
         default() {
 		      return []

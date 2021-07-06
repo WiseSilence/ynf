@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
-    <home-swiper :results="results" />
+    <home-swiper :swipers="swipers" />
     <recommend-view :recommends="recommends"/>
   </div>
 </template>
@@ -12,7 +12,7 @@
   import RecommendView from "./childComps/RecommendView";
 
   import {getHomeUserJson} from "network/home";
-  import {getHomeBlog} from "../../network/home";  // 面向home.js发送网络请求
+  import {getHomeBlog, getHomeUsersJson} from "network/home";  // 面向home.js发送网络请求
 
   export default {
     name: "Home",
@@ -25,7 +25,7 @@
     data() {
       return {
         // results: null
-        results: [],
+        swipers: [],
         recommends: [],
         // title: [],
         // content: []
@@ -37,10 +37,14 @@
       // 1.请求多个数据
       getHomeBlog().then(res => {
         console.log(res);
-        this.results = res.data;  // 防止函数执行完后，返回对象被回收
-        this.recommends = res.data;  // 防止函数执行完后，返回对象被回收
+        this.swipers = res.data;  // 防止函数执行完后，返回对象被回收
         // this.title = res.data[0].title;  // 防止函数执行完后，返回对象被回收
         // this.content = res.data[0].content;  // 防止函数执行完后，返回对象被回收
+      })
+
+      getHomeUsersJson().then(res => {
+        console.log(res);
+        this.recommends = res.data;  // 防止函数执行完后，返回对象被回收
       })
     }
   }

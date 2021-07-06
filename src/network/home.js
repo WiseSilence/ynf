@@ -4,7 +4,12 @@ import {request} from "./request";
 export function getHomeBlog() {
   return request({
     url: '/blog/?format=json'
-    // url: '/users.json'
+  })
+}
+
+export function getHomeUsersJson() {
+  return request({
+    url: '/users.json'
   })
 }
 

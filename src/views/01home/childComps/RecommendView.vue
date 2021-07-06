@@ -3,7 +3,7 @@
     <div v-for="item in recommends" class="recommend-item">
       <a :href="item.url">
 <!--        <img :src="item.image" alt="">-->
-        <div>{{item.content}}</div>
+        <div>{{item.username}}</div>
       </a>
     </div>
   </div>
